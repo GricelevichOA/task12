@@ -1,0 +1,6 @@
+<div class="container">
+	<h3>List of all users</h3>
+	<% @users.each do |user| %>
+		<p><%= link_to "#{user.email}", user_path(user) %></p>
+	<% end %>
+</div>

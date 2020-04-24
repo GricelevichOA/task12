@@ -1,0 +1,4 @@
+<%= simple_form_for @user do |f|%>
+	<%= f.association :role, collection: Role.all, value_method: :id, include_blank: false %>
+	<%= f.button :submit %>
+<% end %>
