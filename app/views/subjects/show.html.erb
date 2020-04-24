@@ -1,0 +1,9 @@
+<div class="container">
+	<h1><%= @subject.topic %></h1>
+
+	<p><%= @subject.description %></p>
+
+	<%= link_to 'Edit subject', edit_subject_path(@subject) %></br>
+	<%= link_to 'Delete subject', @subject, method: :delete, data: { confirm: 'Are you sure?' } %></br>
+	<%= link_to 'Back', subjects_path %>
+</div>

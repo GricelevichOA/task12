@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_133232) do
 
   create_table "subjects", force: :cascade do |t|
     t.string "topic"
-    t.string "desctiption"
+    t.string "description"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

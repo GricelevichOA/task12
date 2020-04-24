@@ -1,0 +1,7 @@
+<div class="container">
+	<h1>Subjects list</h1>
+	<% @subjects.each do |subject| %>
+		<p><%= link_to "#{subject.topic}", subject_path(subject) %></p>
+	<% end %>
+	<br><%= link_to 'New Subject', new_subject_path %>
+</div>
