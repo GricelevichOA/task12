@@ -1,0 +1,8 @@
+<div class="container">
+	<h1>Role</h1>
+	<%= @role.name %>
+
+	<p><%= link_to 'Edit role', edit_role_path(@role) %></p>
+	<p><%= link_to 'Delete role', @role, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+	<%= link_to 'Back', roles_path %>
+</div>	

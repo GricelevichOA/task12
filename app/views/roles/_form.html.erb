@@ -1,0 +1,9 @@
+<%= simple_form_for @role do |f|%>
+	<%= f.input :name, label: 'Enter role name' %>
+	<%= f.input :is_admin, as: :select, collection: [["Yes", true],["No", false]], label: "Is user admin?", include_blank: false %>
+	<%= f.input :can_read, as: :select, collection: [["Yes", true],["No", false]], label: "Can user read subjects?", include_blank: false %>
+	<%= f.input :can_create, as: :select, collection: [["Yes", true],["No", false]], label: "Can user create subjects?", include_blank: false %>
+	<%= f.input :can_update, as: :select, collection: [["Yes", true],["No", false]], label: "Can user edit subjects?", include_blank: false %>
+	<%= f.input :can_delete, as: :select, collection: [["Yes", true],["No", false]], label: "Can user delete subjects?", include_blank: false %>
+	<%= f.button :submit %>
+<% end %>

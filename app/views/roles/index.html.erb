@@ -1,0 +1,9 @@
+<div class="container">
+	<h1>Roles list</h1>
+
+	<% @roles.each do |role| %>
+		<p><%= link_to "#{role.name}", role_path(role) %></p>
+	<% end %>
+
+	<br><%= link_to 'New Role', new_role_path %>
+</div>
