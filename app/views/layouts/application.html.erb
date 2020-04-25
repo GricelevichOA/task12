@@ -19,9 +19,11 @@
           <li class="nav-item">
             <a class="nav-link" href="/subjects">Subjects</a>
           </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/roles">Roles management</a>
-        </li>
+          <% if policy(:role).index? %>
+            <li class="nav-item">          
+              <a class="nav-link" href="/roles">Roles management</a>
+            </li>
+          <% end %>
         <li class="nav-item">
             <a class="nav-link" href="/users">Users list</a>
         </li>

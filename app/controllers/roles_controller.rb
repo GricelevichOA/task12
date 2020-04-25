@@ -3,20 +3,25 @@ class RolesController < ApplicationController
 
 	def index
 		@roles = Role.all
+		authorize @roles
 	end
 
 	def show
+		authorize @role
 	end
 
 	def new
 		@role = Role.new
+		authorize @role
 	end
 
 	def edit
+		authorize @role
 	end
 
 	def create
 		@role = Role.new(role_params)
+		authorize @role
 		if @role.save
 			redirect_to @role, notice: 'Role was successfully created.'
 		else
