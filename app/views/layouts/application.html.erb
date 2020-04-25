@@ -24,9 +24,11 @@
               <a class="nav-link" href="/roles">Roles management</a>
             </li>
           <% end %>
-        <li class="nav-item">
-            <a class="nav-link" href="/users">Users list</a>
-        </li>
+          <% if policy(:user).index? %>
+            <li class="nav-item">
+              <a class="nav-link" href="/users">Users list</a>
+            </li>
+          <% end %>
         </ul>
         <p class="navbar-text float-right">
           <% if user_signed_in? %>

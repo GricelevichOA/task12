@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
+	before_action :authorize_user, except: [:index]
 
 	def index
 		@users = User.all
+		authorize @users
 	end
 
 	def show
@@ -25,6 +27,10 @@ class UsersController < ApplicationController
 	end
 
 	private
+
+	def authorize_user
+		authorize @user
+	end
 
 	def set_user
 		@user = User.find(params[:id])
