@@ -1,8 +1,14 @@
 <div class="container">
 	<h1>Role</h1>
-	<%= @role.name %>
+	<h2><%= @role.name %></h2>
 
-	<p><%= link_to 'Edit role', edit_role_path(@role) %></p>
-	<p><%= link_to 'Delete role', @role, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-	<%= link_to 'Back', roles_path %>
+	Admin: <%= @role.is_admin %></br>
+	Can view subjects: <%= @role.can_read %></br>
+	Can create subjects: <%= @role.can_create %></br>
+	Can edit subjects: <%= @role.can_update %></br>
+	Can delete subjects: <%= @role.can_delete %></br>
+</br>
+	<%= link_to 'Edit role', edit_role_path(@role) %></br>
+	<%= link_to 'Delete role', @role, method: :delete, data: { confirm: 'Are you sure?' } %></br>
+	<%= link_to 'Back', roles_path %></br>
 </div>	

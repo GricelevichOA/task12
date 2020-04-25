@@ -1,9 +1,30 @@
 <div class="container">
 	<h1>Roles list</h1>
 
-	<% @roles.each do |role| %>
-		<p><%= link_to "#{role.name}", role_path(role) %></p>
-	<% end %>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Role</th>
+				<th scope="col">Admin</th>
+				<th scope="col">Read</th>
+				<th scope="col">Create</th>
+				<th scope="col">Update</th>
+				<th scope="col">Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @roles.each do |role| %>
+				<tr>
+					<th><%= link_to "#{role.name}", role_path(role) %></th>
+					<th><%= role.is_admin %></th>
+					<th><%= role.can_read %></th>
+					<th><%= role.can_create %></th>
+					<th><%= role.can_update %></th>
+					<th><%= role.can_delete %></th>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
 
 	<br><%= link_to 'New Role', new_role_path %>
 </div>

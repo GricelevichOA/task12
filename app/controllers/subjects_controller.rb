@@ -6,6 +6,9 @@ class SubjectsController < ApplicationController
 		authorize @subjects
 	end
 
+	def welcome
+	end
+
 	def show
 		authorize @subject
 	end

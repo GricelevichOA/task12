@@ -1,9 +1,24 @@
 <div class="container">
 	<h1>Subjects list</h1>
-	<% @subjects.each do |subject| %>
-		<p><%= link_to "#{subject.topic}", subject_path(subject) %></p>
-	<% end %>
+	
 	<% if policy(:subject).new? %>
 		<br><%= link_to 'New Subject', new_subject_path %>
 	<% end %>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Topic</th>
+				<th scope="col">Created at</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @subjects.each do |subject| %>
+				<tr>
+					<th><%= link_to "#{subject.topic}", subject_path(subject) %></th>
+					<th><%= subject.created_at %></th>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
 </div>

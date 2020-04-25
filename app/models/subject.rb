@@ -1,3 +1,3 @@
 class Subject < ApplicationRecord
-	enum status: [:fresh, :old]
+	enum status: ["New", "Old"]
 end
