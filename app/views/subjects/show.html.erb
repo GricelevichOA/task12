@@ -2,8 +2,11 @@
 	<h1><%= @subject.topic %></h1>
 
 	<p><%= @subject.description %></p>
-
-	<%= link_to 'Edit subject', edit_subject_path(@subject) %></br>
-	<%= link_to 'Delete subject', @subject, method: :delete, data: { confirm: 'Are you sure?' } %></br>
+	<% if policy(:subject).edit? %>
+		<%= link_to 'Edit subject', edit_subject_path(@subject) %></br>	
+	<% end %>	
+	<% if policy(:subject).destroy? %>
+		<%= link_to 'Delete subject', @subject, method: :delete, data: { confirm: 'Are you sure?' } %></br>
+	<% end %>
 	<%= link_to 'Back', subjects_path %>
 </div>

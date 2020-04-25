@@ -3,5 +3,7 @@
 	<% @subjects.each do |subject| %>
 		<p><%= link_to "#{subject.topic}", subject_path(subject) %></p>
 	<% end %>
-	<br><%= link_to 'New Subject', new_subject_path %>
+	<% if policy(:subject).new? %>
+		<br><%= link_to 'New Subject', new_subject_path %>
+	<% end %>
 </div>
